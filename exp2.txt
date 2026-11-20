@@ -1,0 +1,17 @@
+N = input("Enter cluster size: ");
+
+total_BW = 60000;
+duplex = 50;
+total_area = 4200;
+R = 2.15;
+
+total_ch = total_BW / duplex;
+cell_area = 1.5 * sqrt(3) * (R^2);
+
+reps = round(total_area / (cell_area * N));
+
+ch_per_cell = floor(total_ch / N);
+
+disp(reps, "Cluster Repetitions:");
+disp(ch_per_cell, "Channels per cell:");
+disp(reps * N * ch_per_cell, "Total System Capacity:");
